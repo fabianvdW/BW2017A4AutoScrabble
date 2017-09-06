@@ -1,8 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hi vdw");
-        System.out.println("lul");
-        System.out.println("rofl");
-        System.out.println("roflTest");
+        String[] kennzeichen=leseKennzeichenEin();
+        String[] testDaten=leseTestDatenEin();
+        System.out.println("TIMO: "+ testKennzeichen("TIMO"));
+        for(String s: testDaten){
+            System.out.println(s+": "+testKennzeichen(s));
+        }
+    }
+    public static String[] leseKennzeichenEin(){
+        return null;
+    }
+    public static  String[] leseTestDatenEin(){
+        return null;
+    }
+    public static boolean testKennzeichen(String s){
+        return false;
     }
 }
