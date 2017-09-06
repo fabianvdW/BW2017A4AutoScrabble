@@ -23,7 +23,11 @@ public class Main {
     }
     public static boolean testeKennzeichen(String s,ArrayList<String> kennzeichen,int position,boolean istImMittelTeil){
         if(position>=s.length()){
-            return true;
+            if(istImMittelTeil){
+                return false;
+            }else {
+                return true;
+            }
         }else if(!istImMittelTeil){
             boolean char1=false;
             boolean char2=false;
@@ -33,11 +37,13 @@ public class Main {
                 char1= testeKennzeichen(s,kennzeichen,position+1,true);
             }
             if(char1) return true;
+            if(position+1==s.length())return false;
             b=s.substring(position,position+1);
             if(kennzeichen.contains(b)){
                 char2= testeKennzeichen(s,kennzeichen,position+2,true);
             }
             if(char2)return true;
+            if(position+2==s.length())return false;
             b=s.substring(position,position+2);
             if(kennzeichen.contains(b)){
                 char3= testeKennzeichen(s,kennzeichen,position+3,true);
